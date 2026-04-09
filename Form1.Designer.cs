@@ -50,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            grpMenu.SuspendLayout();
             grpOption.SuspendLayout();
             grpOrder.SuspendLayout();
             SuspendLayout();
@@ -62,7 +63,7 @@
             lblAppname.Location = new Point(12, 9);
             lblAppname.Name = "lblAppname";
             lblAppname.Size = new Size(371, 54);
-            lblAppname.TabIndex = 0;
+            lblAppname.TabIndex = 7;
             lblAppname.Text = "버거 주문 키오스크";
             // 
             // rdoHamBurger
@@ -70,7 +71,7 @@
             rdoHamBurger.AutoSize = true;
             rdoHamBurger.Font = new Font("맑은 고딕", 20F);
             rdoHamBurger.ForeColor = SystemColors.ActiveCaptionText;
-            rdoHamBurger.Location = new Point(37, 117);
+            rdoHamBurger.Location = new Point(27, 56);
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(116, 41);
             rdoHamBurger.TabIndex = 1;
@@ -83,10 +84,10 @@
             rdoBulgogiBurger.AutoSize = true;
             rdoBulgogiBurger.Font = new Font("맑은 고딕", 20F);
             rdoBulgogiBurger.ForeColor = SystemColors.ActiveCaptionText;
-            rdoBulgogiBurger.Location = new Point(37, 227);
+            rdoBulgogiBurger.Location = new Point(27, 166);
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(170, 41);
-            rdoBulgogiBurger.TabIndex = 1;
+            rdoBulgogiBurger.TabIndex = 2;
             rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
@@ -96,10 +97,10 @@
             rdoChickenBurger.AutoSize = true;
             rdoChickenBurger.Font = new Font("맑은 고딕", 20F);
             rdoChickenBurger.ForeColor = SystemColors.ActiveCaptionText;
-            rdoChickenBurger.Location = new Point(37, 343);
+            rdoChickenBurger.Location = new Point(27, 282);
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(143, 41);
-            rdoChickenBurger.TabIndex = 1;
+            rdoChickenBurger.TabIndex = 3;
             rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
@@ -142,7 +143,7 @@
             chkPotato.Location = new Point(28, 38);
             chkPotato.Name = "chkPotato";
             chkPotato.Size = new Size(144, 41);
-            chkPotato.TabIndex = 3;
+            chkPotato.TabIndex = 0;
             chkPotato.Text = "감자튀김";
             chkPotato.UseVisualStyleBackColor = true;
             // 
@@ -154,7 +155,7 @@
             chkCola.Location = new Point(28, 120);
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(90, 41);
-            chkCola.TabIndex = 3;
+            chkCola.TabIndex = 1;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
             // 
@@ -166,7 +167,7 @@
             chkCheese.Location = new Point(28, 212);
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(153, 41);
-            chkCheese.TabIndex = 3;
+            chkCheese.TabIndex = 2;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -184,12 +185,15 @@
             // 
             // grpMenu
             // 
+            grpMenu.Controls.Add(rdoHamBurger);
+            grpMenu.Controls.Add(rdoBulgogiBurger);
+            grpMenu.Controls.Add(rdoChickenBurger);
             grpMenu.Font = new Font("맑은 고딕", 15F);
             grpMenu.ForeColor = Color.IndianRed;
             grpMenu.Location = new Point(12, 66);
             grpMenu.Name = "grpMenu";
             grpMenu.Size = new Size(362, 372);
-            grpMenu.TabIndex = 0;
+            grpMenu.TabIndex = 1;
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴 선택";
             // 
@@ -204,7 +208,7 @@
             grpOption.Location = new Point(380, 66);
             grpOption.Name = "grpOption";
             grpOption.Size = new Size(217, 372);
-            grpOption.TabIndex = 1;
+            grpOption.TabIndex = 2;
             grpOption.TabStop = false;
             grpOption.Text = "추가 옵션";
             // 
@@ -217,7 +221,7 @@
             grpOrder.Location = new Point(603, 66);
             grpOrder.Name = "grpOrder";
             grpOrder.Size = new Size(313, 299);
-            grpOrder.TabIndex = 5;
+            grpOrder.TabIndex = 7;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
             // 
@@ -247,7 +251,7 @@
             btnOrder.Location = new Point(612, 379);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(147, 59);
-            btnOrder.TabIndex = 2;
+            btnOrder.TabIndex = 3;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
@@ -259,7 +263,7 @@
             btnInit.Location = new Point(776, 379);
             btnInit.Name = "btnInit";
             btnInit.Size = new Size(140, 59);
-            btnInit.TabIndex = 3;
+            btnInit.TabIndex = 4;
             btnInit.Text = "초기화";
             btnInit.UseVisualStyleBackColor = false;
             btnInit.Click += btnInit_Click;
@@ -275,9 +279,6 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(rdoChickenBurger);
-            Controls.Add(rdoBulgogiBurger);
-            Controls.Add(rdoHamBurger);
             Controls.Add(grpMenu);
             Controls.Add(lblAppname);
             Controls.Add(grpOption);
@@ -287,6 +288,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            grpMenu.ResumeLayout(false);
+            grpMenu.PerformLayout();
             grpOption.ResumeLayout(false);
             grpOption.PerformLayout();
             grpOrder.ResumeLayout(false);

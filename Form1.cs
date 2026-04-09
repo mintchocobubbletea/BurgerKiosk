@@ -5,7 +5,8 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
-            this.ActiveControl = null;
+            this.AcceptButton = btnOrder;
+            this.ActiveControl = lblTotalCost;
         }
         int totalCost = 0;
         private void Form1_Load(object sender, EventArgs e)
@@ -13,6 +14,19 @@ namespace BurgerKiosk
             rdoHamBurger.Checked = false;
             rdoBulgogiBurger.Checked = false;
             rdoChickenBurger.Checked = false;
+            rdoHamBurger.TabStop = true;
+            rdoBulgogiBurger.TabStop = true;
+            rdoChickenBurger.TabStop = true;
+            rdoHamBurger.TabIndex = 0;
+            rdoBulgogiBurger.TabIndex = 1;
+            rdoChickenBurger.TabIndex = 2;
+            grpMenu.Enter += (s, e) =>
+            {
+                rdoHamBurger.Focus();
+            };
+            rdoHamBurger.TabStop = true;
+            rdoBulgogiBurger.TabStop = false;
+            rdoChickenBurger.TabStop = false;
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -78,6 +92,7 @@ namespace BurgerKiosk
             rdoHamBurger.Checked = false;
             rdoBulgogiBurger.Checked = false;
             rdoChickenBurger.Checked = false;
+            this.ActiveControl = lblTotalCost;
         }
 
         private void btnInit_Click(object sender, EventArgs e)
