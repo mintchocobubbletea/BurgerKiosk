@@ -5,10 +5,35 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
+            this.ActiveControl = null;
         }
         int totalCost = 0;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            rdoHamBurger.Checked = false;
+            rdoBulgogiBurger.Checked = false;
+            rdoChickenBurger.Checked = false;
+        }
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            bool isSelected = rdoHamBurger.Checked || rdoBulgogiBurger.Checked || rdoChickenBurger.Checked
+                  || chkPotato.Checked || chkCola.Checked || chkCheese.Checked || chkSauce.Checked;
+
+            if (!isSelected)
+            {
+                lblTotalCost.Text = "메뉴를 하나 이상 선택해주세요!";
+                lblTotalCost.Font = new Font(lblTotalCost.Font.FontFamily, 12);
+                lblTotalCost.ForeColor = Color.Red;
+                return;
+            }
+            else
+            {
+                lblTotalCost.ForeColor = Color.MediumBlue;
+                lblTotalCost.Font = new Font(lblTotalCost.Font.FontFamily, 18);
+                lblTotalCost.Text = "총 금액 : 0원";
+
+            }
+
             if (rdoHamBurger.Checked)
             {
                 totalCost += 5000;
@@ -46,6 +71,14 @@ namespace BurgerKiosk
             }
             lblTotalCost.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
         }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            rdoHamBurger.Checked = false;
+            rdoBulgogiBurger.Checked = false;
+            rdoChickenBurger.Checked = false;
+        }
 
         private void btnInit_Click(object sender, EventArgs e)
         {
@@ -58,7 +91,11 @@ namespace BurgerKiosk
             chkSauce.Checked = false;
             lstOrder.Items.Clear();
             totalCost = 0;
+            lblTotalCost.ForeColor = Color.Blue;
+            lblTotalCost.Font = new Font(lblTotalCost.Font.FontFamily, 18);
             lblTotalCost.Text = "총 금액 : 0원";
         }
+
+       
     }
 }

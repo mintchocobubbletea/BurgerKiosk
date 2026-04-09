@@ -189,7 +189,7 @@
             grpMenu.Location = new Point(12, 66);
             grpMenu.Name = "grpMenu";
             grpMenu.Size = new Size(362, 372);
-            grpMenu.TabIndex = 4;
+            grpMenu.TabIndex = 0;
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴 선택";
             // 
@@ -204,7 +204,7 @@
             grpOption.Location = new Point(380, 66);
             grpOption.Name = "grpOption";
             grpOption.Size = new Size(217, 372);
-            grpOption.TabIndex = 4;
+            grpOption.TabIndex = 1;
             grpOption.TabStop = false;
             grpOption.Text = "추가 옵션";
             // 
@@ -247,7 +247,7 @@
             btnOrder.Location = new Point(612, 379);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(147, 59);
-            btnOrder.TabIndex = 6;
+            btnOrder.TabIndex = 2;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
@@ -259,7 +259,7 @@
             btnInit.Location = new Point(776, 379);
             btnInit.Name = "btnInit";
             btnInit.Size = new Size(140, 59);
-            btnInit.TabIndex = 6;
+            btnInit.TabIndex = 3;
             btnInit.Text = "초기화";
             btnInit.UseVisualStyleBackColor = false;
             btnInit.Click += btnInit_Click;
@@ -268,7 +268,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(941, 464);
+            ClientSize = new Size(941, 460);
             Controls.Add(btnInit);
             Controls.Add(btnOrder);
             Controls.Add(grpOrder);
@@ -283,6 +283,7 @@
             Controls.Add(grpOption);
             Name = "Form1";
             Text = "Burger Kiost v1.0";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
